@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.git/
+.gitignore
+.env
+# Runtime-данные бота: файл лежит в src/, поэтому нужен glob от корня контекста
+**/topics.json
+.vscode/
+.idea/
+*.log

@@ -1,0 +1,12 @@
+services:
+  bot:
+    build: .
+    container_name: ai_helper_bot
+    restart: unless-stopped
+    volumes:
+      # Монтируем .env — чтобы токены не хранились в образе
+      - ./.env:/app/.env:ro
+      # Монтируем папку src целиком — чтобы topics.json сохранялся между перезапусками
+      - ./src:/app/src
+    environment:
+      - TZ=Europe/Moscow   # Часовой пояс для логов
